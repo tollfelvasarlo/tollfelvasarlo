@@ -3,76 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bemutatkozás</title>
+    <title>Megbízható Bolt - Bemutatkozás</title>
     <style>
-        /* Alap stílusok */
+        /* Alapbeállítások */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            margin: 0;
-            background: #f0f4f8;
             color: #333;
         }
 
-        /* Tartalom konténer */
+        /* Konténer, teljes képernyős nézethez igazítva */
         .container {
+            width: 1920px;
+            height: 1080px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-fish-skin.png');
+        }
+
+        /* Fejléc szekció */
+        .header {
+            width: 100%;
             text-align: center;
-            background: white;
             padding: 40px;
+            background: linear-gradient(to bottom, #007bff, #6fbfda, #ffffff);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px 10px 0 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .header p {
+            font-size: 1.5em;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Leírás szekció */
+        .description {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.5em;
+            color: #555;
+            line-height: 1.6;
+            width: 70%;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
         }
 
-        h1 {
-            font-size: 2.5em;
-            color: #4a90e2;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin: 20px 0 30px;
-            line-height: 1.6;
-        }
-
-        /* Gombok stílusa és elrendezése */
-        .button-container {
+        /* Képek konténer */
+        .image-container {
             display: flex;
+            gap: 30px;
             justify-content: center;
-            gap: 20px;
+            width: 100%;
+            padding: 20px;
         }
 
-        .button {
-            background-color: #4a90e2;
+        .image-placeholder {
+            width: 400px;
+            height: 300px;
+            background-color: #333;
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            border: 2px solid #505050;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #e6e6e6;
+            text-transform: uppercase;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-placeholder:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Elérhetőségek */
+        .contact {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+            color: #333;
+            border-top: 1px solid #ddd;
+            width: 100%;
+            background-color: #007bff; /* Kék háttér az elérhetőségeknek */
             color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #357ab8;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Üdvözöllek!</h1>
-    <p>Köszönöm, hogy meglátogattad az oldalam! Itt bemutatom magam és a munkáimat. Kattints az alábbi gombok egyikére, ha többet szeretnél megtudni rólam, megnéznéd a munkáimat, vagy kapcsolatba lépnél velem.</p>
-    
-    <div class="button-container">
-        <a href="#rolam" class="button">Rólam</a>
-        <a href="#munkáim" class="button">Munkáim</a>
-        <a href="#kapcsolat" class="button">Kapcsolat</a>
+    <!-- Fejléc szekció -->
+    <div class="header">
+        <h1>Üdvözöljük a Megbízható Boltban!</h1>
+        <p>Köszönjük, hogy minket választott!</p>
+    </div>
+
+    <!-- Rövid leírás szekció -->
+    <div class="description">
+        <p>Mi egy megbízható bolt vagyunk, ahol garantáljuk a legjobb árakat és a minőségi szolgáltatást. Nálunk nincsenek átverések, csak a legjobbat kínáljuk ügyfeleinknek!</p>
+    </div>
+
+    <!-- Képek szekció -->
+    <div class="image-container">
+        <div class="image-placeholder">Kép 1</div>
+        <div class="image-placeholder">Kép 2</div>
+        <div class="image-placeholder">Kép 3</div>
+    </div>
+
+    <!-- Elérhetőségek szekció -->
+    <div class="contact">
+        <p>Elérhetőségeink: email@pelda.hu | Telefon: +36 30 123 4567</p>
     </div>
 </div>
 
 </body>
 </html>
+
